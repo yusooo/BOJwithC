@@ -1,18 +1,16 @@
 #include<stdio.h>
 int main(){
-	int n=0;
-	double Max=0, sum=0;
-	scanf("%d", &n);
-	int a[n+1]={0};
-	for(int i=1;i<=n;i++){
-		scanf("%d", &a[i]);
-		if(a[i]>a[i-1]) Max=a[i];
+	int a;
+	scanf("%d", &a);
+	double sco[a]={0}, max=0, sum=0;
+	for(int i=0;i<a;i++){
+		scanf("%d", &sco[i]);
+		if(max<sco[i]) max=sco[i];
 	}
-	for(int i=1;i<=n;i++){
-		a[i]=(a[i]/Max)*100;
-		sum+=a[i];
+	for(int i=0;i<a;i++){
+		sco[i]=sco[i]/max*100;
+		sum+=sco[i];
 	}
-	printf("%lf", sum/(double)n);
-	return 0;
+	printf("%lf", (double)sum/(double)a);
 }
 
