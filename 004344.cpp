@@ -1,25 +1,22 @@
 #include<stdio.h>
 int main(){
-	int c, n, i, j, k, sum=0, count, av[c]={};
+	int c, i, j, stu, sum=0;
 	scanf("%d", &c);
+	double per[c] = {0};
+	for(i = 0;i<c;i++){
+		scanf("%d", &stu);
+		int sco[j]={0};
+		for(j=0;j<stu;j++){
+			scanf("%d", &sco[j]);
+			sum+=sco[j];
+		}
+		for(j=0;j<stu;j++){
+			if(sco[j]>(double)sum/(double)j) per[i]++;
+		}
+		per[i]/=stu;
+		sum=0;
+	}
 	for(i=0;i<c;i++){
-		scanf("%d", &n);
-		double per[n];
-		int p[n]={};
-		for(j=0;j<n;j++){
-			scanf("%d", &k);
-			sum+=k;
-			p[j]=k;
-		}
-		av[i]=(float)sum/k;
-		for(int u=0;u<n;u++){
-			if(av[i]<p[u]) count++; 
-		}
-		per[i]=(float)count/n;
+		printf("%.3lf%%\n", per[i]);
 	}
-	while(c>0){
-		printf("%.3lf%%", per[i]);
-		c--;
-	}
-	return 0;
 }
